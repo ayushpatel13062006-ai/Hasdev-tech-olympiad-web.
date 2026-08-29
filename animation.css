@@ -1,0 +1,38 @@
+/* Subtle entrance + float animations */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.25)); }
+  50% { filter: drop-shadow(0 0 45px rgba(168, 85, 247, 0.45)); }
+}
+
+.badge,
+.hero-title,
+.hero-desc,
+.event-info-grid,
+.hero-buttons {
+  animation: fadeUp 0.7s ease both;
+}
+
+.hero-title { animation-delay: 0.1s; }
+.hero-desc { animation-delay: 0.2s; }
+.event-info-grid { animation-delay: 0.3s; }
+.hero-buttons { animation-delay: 0.4s; }
+
+.hero-badge-img {
+  animation: float 5s ease-in-out infinite, glowPulse 4s ease-in-out infinite;
+}
+
+.stats-bar {
+  animation: fadeUp 0.8s ease both;
+  animation-delay: 0.5s;
+}
